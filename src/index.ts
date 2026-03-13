@@ -161,37 +161,57 @@ function divisivelPor11(min: number, max: number) {
 // Conteúdo de hoje   => Promisses
 
 //Assincrona?
-function minhaPromessa():Promise<string|null>{
-    const prom = new Promise<string>((resolve,reject)=>{
-        if(Math.random()>.5){
-            setTimeout(()=>resolve("Tere"),5000)
-        }
-        else{
-            reject(null)
-        }
-    })
-    return prom
-}
-minhaPromessa()
-.then((valor)=>console.log(valor))
-.catch((erro)=>console.log(erro))
-console.log("Executei esse código")
+// function minhaPromessa():Promise<string|null>{
+//     const prom = new Promise<string>((resolve,reject)=>{
+//         if(Math.random()>.5){
+//             setTimeout(()=>resolve("Tere"),5000)
+//         }
+//         else{
+//             reject(null)
+//         }
+//     })
+//     return prom
+// }
+// minhaPromessa()
+// .then((valor)=>console.log(valor))
+// .catch((erro)=>console.log(erro))
+// console.log("Executei esse código")
 
-try{
-    const resultado = await minhaPromessa()
-    console.log(resultado)
-}
-catch(erro){
-    console.log(erro)
-}
+// try{
+//     const resultado = await minhaPromessa()
+//     console.log(resultado)
+// }
+// catch(erro){
+//     console.log(erro)
+// }
 
 // Crie uma função PROMISE que tenha 50% de chance de retornar "tere" após 
 // 5 segundos ou a função devolve o valor null
 // function devolveTere()
 
 
-
+//VETORES
 // MAP
 // FILTER
 // FIND
 // SPREAD
+
+const vetor:{id:number,nome:string,idade:number}[] = [
+    {id:1,nome:"tere",idade:32},
+    {id:2,nome:"Marcelo",idade:17},
+    {id:3,nome:"Joãozinho",idade:18},
+];
+//FIND  Achar alguem maior de 18 anos?
+const resultado = vetor.find((x)=>x.idade>=18)
+console.log(resultado)
+//FILTER  Achar alguem maior de 18 anos?
+const resultado2 = vetor.filter((x)=>x.idade>=33)
+console.log(resultado2)
+
+//MAP  MAPEIA
+const resultado3 = vetor.map((x)=>{return {nome:x.nome,idade:x.idade}})
+console.log(resultado3)
+
+
+
+
